@@ -44,10 +44,7 @@ class SignUpPageTests(TestCase):
         self.assertContains(self.response, "Sign Up")
         self.assertNotContains(self.response, "Hi there! I should not be on the page.")
 
-    def test_signup_form(self):  # new
-        # form = self.response.context.get("form")
-        # self.assertIsInstance(form, CustomUserCreationForm)
-        # self.assertContains(self.response, "csrfmiddlewaretoken")
+    def test_signup_form(self):
         new_user = get_user_model().objects.create_user(self.username, self.email)
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, self.username)
