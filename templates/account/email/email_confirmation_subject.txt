@@ -1,0 +1,7 @@
+{% load i18n %}
+{% autoescape off %}
+{% comment %} {% blocktrans %}Please Confirm Your E-mail Address{% endblocktrans %} {% endcomment %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Welcome to {{ site_name }}!
+{% endblocktrans %}
+{% endautoescape %}
